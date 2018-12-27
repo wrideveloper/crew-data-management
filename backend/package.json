@@ -1,0 +1,24 @@
+{
+  "name": "crew-data-management-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "watch": "npm run tsc -- --watch",
+    "start": "nodemon build/index.js",
+    "dev": "concurrently 'npm run watch' 'npm run start'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.1",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "@types/es6-shim": "^0.31.39",
+    "@types/express": "^4.16.0"
+  }
+}
