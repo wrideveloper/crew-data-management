@@ -1,9 +1,7 @@
 import { connect } from 'mongoose'
 
 connect(
-  `mongodb+srv://wri:${
-    process.env.PASSWORD
-  }@cluster0-jxp3n.mongodb.net/test?retryWrites=true`,
+  `mongodb+srv://wri:wripolinema@cluster0-jxp3n.mongodb.net/test?retryWrites=true`,
   {
     useNewUrlParser: true
   }

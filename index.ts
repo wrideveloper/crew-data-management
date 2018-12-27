@@ -1,6 +1,5 @@
 import express from 'express'
 import cors from 'cors'
-require('dotenv').config()
 require('./config/db')
 import { AnggotaRouter } from './routers/AnggotaRouter'
 import { DivisiRouter } from './routers/DivisiRouter'
