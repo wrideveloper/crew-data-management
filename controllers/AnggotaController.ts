@@ -1,30 +1,43 @@
 import { Anggota } from '../models/Anggota'
 import { Request, Response } from 'express'
+import fs from 'fs'
+import { IAnggota } from '../interfaces'
 
 export class AnggotaController {
-  public index(req: Request, res: Response) {
-    Anggota.find({}).then(data => res.json(data))
+  public async index(req: Request, res: Response) {
+    res.json(await Anggota.find({}))
   }
 
-  public show(req: Request, res: Response) {
-    Anggota.findById(req.params._id).then(data => res.json(data))
+  public async show(req: Request, res: Response) {
+    res.json(await Anggota.findById(req.params._id))
   }
 
-  public store(req: Request, res: Response) {
-    Anggota.create(req.body.anggota).then(data => res.json(data))
+  public async store(req: Request, res: Response) {
+    res.json(await Anggota.create(req.body.anggota))
   }
 
-  public update(req: Request, res: Response) {
+  public async update(req: Request, res: Response) {
+    res.json(
+      await Anggota.findOneAndUpdate(
+        { _id: req.params._id },
+        { $set: req.body.anggota },
+        { new: true }
+      )
+    )
+  }
+
+  public async updateFoto(req: Request, res: Response) {
+    const anggota = await Anggota.findById(req.params._id)
+    if (anggota!.foto) fs.unlinkSync(anggota!.foto!)
+
     Anggota.findOneAndUpdate(
       { _id: req.params._id },
-      { $set: req.body.anggota },
+      { $set: { foto: req.file.path } },
       { new: true }
     ).then(data => res.json(data))
   }
 
-  public destroy(req: Request, res: Response) {
-    Anggota.findOneAndDelete({ _id: req.params._id }).then(data =>
-      res.json(data)
-    )
+  public async destroy(req: Request, res: Response) {
+    res.json(await Anggota.findOneAndDelete({ _id: req.params._id }))
   }
 }

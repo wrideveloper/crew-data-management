@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose'
+import { IAnggota } from '../interfaces'
 
 const AnggotaSchema = new Schema({
   nim: {
@@ -29,4 +30,4 @@ const AnggotaSchema = new Schema({
   }
 })
 
-export const Anggota = model('Anggota', AnggotaSchema, 'Anggota')
+export const Anggota = model<IAnggota>('Anggota', AnggotaSchema, 'Anggota')

@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose'
+import { IDivisi } from '../interfaces'
 
 const DivisiSchema = new Schema({
   nama: {
@@ -6,4 +7,4 @@ const DivisiSchema = new Schema({
   }
 })
 
-export const Divisi = model('Divisi', DivisiSchema, 'Divisi')
+export const Divisi = model<IDivisi>('Divisi', DivisiSchema, 'Divisi')
