@@ -1,33 +1,33 @@
-import { Schema, model } from 'mongoose'
-import { IAnggota } from '../interfaces'
+import { model, Schema } from "mongoose"
+import { IAnggota } from "../interfaces"
 
 const AnggotaSchema = new Schema({
   nim: {
-    type: Number
+    type: Number,
   },
   nama: {
-    type: String
+    type: String,
   },
   email: {
-    type: String
+    type: String,
   },
   kontak: {
-    type: String
+    type: String,
   },
   foto: {
-    type: String
+    type: String,
   },
   jabatan: {
     type: Schema.Types.ObjectId,
-    ref: 'Jabatan'
+    ref: "Jabatan",
   },
   angkatan: {
-    type: Number
+    type: Number,
   },
   divisi: {
     type: Schema.Types.ObjectId,
-    ref: 'Divisi'
-  }
+    ref: "Divisi",
+  },
 })
 
-export const Anggota = model<IAnggota>('Anggota', AnggotaSchema, 'Anggota')
+export const Anggota = model<IAnggota>("Anggota", AnggotaSchema, "Anggota")

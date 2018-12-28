@@ -1,10 +1,10 @@
-import { Schema, model } from 'mongoose'
-import { IDivisi } from '../interfaces'
+import { model, Schema } from "mongoose"
+import { IDivisi } from "../interfaces"
 
 const DivisiSchema = new Schema({
   nama: {
-    type: String
-  }
+    type: String,
+  },
 })
 
-export const Divisi = model<IDivisi>('Divisi', DivisiSchema, 'Divisi')
+export const Divisi = model<IDivisi>("Divisi", DivisiSchema, "Divisi")
