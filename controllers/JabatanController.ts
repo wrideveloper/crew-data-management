@@ -1,25 +1,25 @@
-import { Divisi } from '../models/Divisi'
+import { Jabatan } from '../models/Jabatan'
 import { Request, Response } from 'express'
 
-export class DivisiController {
+export class JabatanController {
   public index(req: Request, res: Response) {
-    Divisi.find({}).then(data => res.json(data))
+    Jabatan.find({}).then(data => res.json(data))
   }
 
   public store(req: Request, res: Response) {
-    Divisi.create(req.body.divisi).then(data => res.json(data))
+    Jabatan.create(req.body.jabatan).then(data => res.json(data))
   }
 
   public update(req: Request, res: Response) {
-    Divisi.findOneAndUpdate(
+    Jabatan.findOneAndUpdate(
       { _id: req.params._id },
-      { $set: req.body.divisi },
+      { $set: req.body.jabatan },
       { new: true }
     ).then(data => res.json(data))
   }
 
   public destroy(req: Request, res: Response) {
-    Divisi.findOneAndDelete({ _id: req.params._id }).then(data =>
+    Jabatan.findOneAndDelete({ _id: req.params._id }).then(data =>
       res.json(data)
     )
   }

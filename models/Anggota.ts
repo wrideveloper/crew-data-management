@@ -16,8 +16,9 @@ const AnggotaSchema = new Schema({
   foto: {
     type: String
   },
-  role: {
-    type: String
+  jabatan: {
+    type: Schema.Types.ObjectId,
+    ref: 'Jabatan'
   },
   angkatan: {
     type: Number
