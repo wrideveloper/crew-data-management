@@ -7,13 +7,13 @@ export class DivisiController {
   }
 
   public store(req: Request, res: Response) {
-    Divisi.create(req.body.divisi).then((data) => res.json(data))
+    Divisi.create(req.body).then((data) => res.json(data))
   }
 
   public update(req: Request, res: Response) {
     Divisi.findOneAndUpdate(
       { _id: req.params._id },
-      { $set: req.body.divisi },
+      { $set: req.body },
       { new: true },
     ).then((data) => res.json(data))
   }

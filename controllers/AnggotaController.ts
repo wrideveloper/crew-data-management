@@ -12,14 +12,14 @@ export class AnggotaController {
   }
 
   public async store(req: Request, res: Response) {
-    res.json(await Anggota.create(req.body.anggota))
+    res.json(await Anggota.create(req.body))
   }
 
   public async update(req: Request, res: Response) {
     res.json(
       await Anggota.findOneAndUpdate(
         { _id: req.params._id },
-        { $set: req.body.anggota },
+        { $set: req.body },
         { new: true },
       ),
     )

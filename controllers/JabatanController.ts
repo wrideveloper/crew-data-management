@@ -7,13 +7,13 @@ export class JabatanController {
   }
 
   public store(req: Request, res: Response) {
-    Jabatan.create(req.body.jabatan).then((data) => res.json(data))
+    Jabatan.create(req.body).then((data) => res.json(data))
   }
 
   public update(req: Request, res: Response) {
     Jabatan.findOneAndUpdate(
       { _id: req.params._id },
-      { $set: req.body.jabatan },
+      { $set: req.body },
       { new: true },
     ).then((data) => res.json(data))
   }
