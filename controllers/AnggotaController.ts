@@ -4,11 +4,19 @@ import { Anggota } from "../models/Anggota"
 
 export class AnggotaController {
   public async index(req: Request, res: Response) {
-    res.json(await Anggota.find({}))
+    res.json(
+      await Anggota.find({})
+        .populate("divisi")
+        .populate("jabatan"),
+    )
   }
 
   public async show(req: Request, res: Response) {
-    res.json(await Anggota.findById(req.params._id))
+    res.json(
+      await Anggota.findById(req.params._id)
+        .populate("divisi")
+        .populate("jabatan"),
+    )
   }
 
   public async store(req: Request, res: Response) {
