@@ -20,6 +20,7 @@ export class AnggotaController {
   }
 
   public async store(req: Request, res: Response) {
+    delete req.body.foto
     res.json(await Anggota.create(req.body))
   }
 
