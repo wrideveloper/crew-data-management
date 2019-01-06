@@ -36,7 +36,7 @@ export class AnggotaController {
 
   public async updateFoto(req: Request, res: Response) {
     const anggota = await Anggota.findById(req.params._id)
-    if (anggota!.foto) {
+    if (anggota!.foto && fs.existsSync(anggota!.foto!)) {
       fs.unlinkSync(anggota!.foto!)
     }
 
