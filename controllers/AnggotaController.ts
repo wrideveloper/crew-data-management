@@ -24,6 +24,7 @@ export class AnggotaController {
   }
 
   public async update(req: Request, res: Response) {
+    delete req.body.foto
     res.json(
       await Anggota.findOneAndUpdate(
         { _id: req.params._id },
