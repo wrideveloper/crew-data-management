@@ -7,7 +7,8 @@ export class AnggotaController {
     res.json(
       await Anggota.find({})
         .populate("divisi")
-        .populate("jabatan"),
+        .populate("jabatan")
+        .populate("miniclass"),
     )
   }
 
@@ -15,7 +16,8 @@ export class AnggotaController {
     res.json(
       await Anggota.findById(req.params._id)
         .populate("divisi")
-        .populate("jabatan"),
+        .populate("jabatan")
+        .populate("miniclass"),
     )
   }
 

@@ -1,6 +1,6 @@
 import { Document } from "mongoose"
 
-interface IAnggota extends Document {
+export interface IAnggota extends Document {
   nim: number
   nama: string
   email: string
@@ -9,14 +9,18 @@ interface IAnggota extends Document {
   foto?: string
   jabatan?: string
   divisi?: string
+  miniclass?: string
 }
 
-interface IDivisi extends Document {
+export interface IDivisi extends Document {
   nama: string
 }
 
-interface IJabatan extends Document {
+export interface IJabatan extends Document {
   nama: string
 }
 
-export { IAnggota, IDivisi, IJabatan }
+export interface IMiniclass extends Document {
+  nama: string
+  divisi: string
+}

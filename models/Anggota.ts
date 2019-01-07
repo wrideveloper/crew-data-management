@@ -28,6 +28,10 @@ const AnggotaSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Divisi",
   },
+  miniclass: {
+    type: Schema.Types.ObjectId,
+    ref: "Miniclass",
+  },
 })
 
 export const Anggota = model<IAnggota>("Anggota", AnggotaSchema, "Anggota")
