@@ -24,3 +24,11 @@ export interface IMiniclass extends Document {
   nama: string
   divisi: string
 }
+
+export interface IPresensi extends Document {
+  topik: string
+  miniclass: string
+  angkatan: number
+  tanggal: Date
+  peserta: string[]
+}
