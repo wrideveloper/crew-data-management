@@ -6,6 +6,10 @@ export class DivisiController {
     Divisi.find({}).then((data) => res.json(data))
   }
 
+  public show(req: Request, res: Response) {
+    Divisi.findById(req.params._id).then((data) => res.json(data))
+  }
+
   public store(req: Request, res: Response) {
     Divisi.create(req.body).then((data) => res.json(data))
   }

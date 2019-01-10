@@ -11,11 +11,6 @@ export class MiniclassController {
     res.json(await Miniclass.findById(req.params._id).populate("divisi"))
   }
 
-  public async showAnggota(req: Request, res: Response) {
-    const { _id: miniclassId, angkatan } = req.params
-    res.json(await Anggota.find({ miniclass: miniclassId, angkatan }))
-  }
-
   public async store(req: Request, res: Response) {
     res.json(await Miniclass.create(req.body))
   }

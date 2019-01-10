@@ -11,11 +11,7 @@ export class PresensiController {
   }
 
   public async show(req: Request, res: Response) {
-    res.json(
-      await Presensi.findById(req.params._id)
-        .populate("miniclass")
-        .populate("peserta"),
-    )
+    res.json(await Presensi.findById(req.params._id).populate("miniclass"))
   }
 
   public async store(req: Request, res: Response) {

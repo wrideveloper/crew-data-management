@@ -6,6 +6,10 @@ export class JabatanController {
     Jabatan.find({}).then((data) => res.json(data))
   }
 
+  public show(req: Request, res: Response) {
+    Jabatan.findById(req.params._id).then((data) => res.json(data))
+  }
+
   public store(req: Request, res: Response) {
     Jabatan.create(req.body).then((data) => res.json(data))
   }
