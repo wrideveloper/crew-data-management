@@ -32,3 +32,8 @@ export interface IPresensi extends Document {
   tanggal: Date
   peserta: string[]
 }
+
+export interface IAdmin extends Document {
+  username: string
+  password: string
+}

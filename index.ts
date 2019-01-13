@@ -1,6 +1,7 @@
 import cors from "cors"
 import express from "express"
 import "./config/db"
+import { AdminRouter } from "./routers/AdminRouter"
 import { AnggotaRouter } from "./routers/AnggotaRouter"
 import { DivisiRouter } from "./routers/DivisiRouter"
 import { JabatanRouter } from "./routers/JabatanRouter"
@@ -17,5 +18,6 @@ app.use("/divisi", DivisiRouter)
 app.use("/jabatan", JabatanRouter)
 app.use("/miniclass", MiniclassRouter)
 app.use("/presensi", PresensiRouter)
+app.use("/admin", AdminRouter)
 
 app.listen(process.env.PORT || 3000, () => console.log("server started"))
