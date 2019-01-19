@@ -5,8 +5,7 @@ export class PresensiController {
   public async index(req: Request, res: Response) {
     res.json(
       await Presensi.find({})
-        .populate("miniclass")
-        .populate("peserta"),
+        .populate("miniclass"),
     )
   }
 
