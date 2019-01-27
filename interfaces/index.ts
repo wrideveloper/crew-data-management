@@ -33,6 +33,16 @@ export interface IPresensi extends Document {
   peserta: string[]
 }
 
+export interface IKategoriKegiatan extends Document {
+  nama: string
+}
+
+export interface IKegiatan extends Document {
+  nama: string
+  kategori: string
+  laporan: string
+}
+
 export interface IAdmin extends Document {
   username: string
   password: string
