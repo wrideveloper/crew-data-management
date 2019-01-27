@@ -39,8 +39,9 @@ export interface IKategoriKegiatan extends Document {
 
 export interface IKegiatan extends Document {
   nama: string
-  kategori: string
+  kategoriKegiatan: string
   laporan: string
+  tanggal: Date
 }
 
 export interface IAdmin extends Document {

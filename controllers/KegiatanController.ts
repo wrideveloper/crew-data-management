@@ -3,11 +3,13 @@ import { Kegiatan } from "../models/Kegiatan"
 
 export class KegiatanController {
   public async index(req: Request, res: Response) {
-    res.json(await Kegiatan.find({}).populate("kategori"))
+    res.json(await Kegiatan.find({}).populate("kategoriKegiatan"))
   }
 
   public async show(req: Request, res: Response) {
-    res.json(await Kegiatan.findById(req.params._id).populate("kategori"))
+    res.json(
+      await Kegiatan.findById(req.params._id).populate("kategoriKegiatan"),
+    )
   }
 
   public async store(req: Request, res: Response) {

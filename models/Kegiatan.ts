@@ -8,9 +8,12 @@ const KegiatanSchema = new Schema({
   laporan: {
     type: String,
   },
-  kategori: {
+  kategoriKegiatan: {
     type: Schema.Types.ObjectId,
     ref: "KategoriKegiatan",
+  },
+  tanggal: {
+    type: Date,
   },
 })
 
