@@ -35,6 +35,7 @@ export interface IPresensi extends Document {
 
 export interface IKategoriKegiatan extends Document {
   nama: string
+  keterangan: string
 }
 
 export interface IKegiatan extends Document {

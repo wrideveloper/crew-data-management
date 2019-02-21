@@ -5,6 +5,9 @@ const KategoriKegiatanSchema = new Schema({
   nama: {
     type: String,
   },
+  keterangan: {
+    type: String,
+  },
 })
 
 export const KategoriKegiatan = model<IKategoriKegiatan>(
