@@ -8,7 +8,7 @@ const NomorSuratSchema = new Schema({
   keperluan: {
     type: String,
   },
-  pemohon: {
+  anggota: {
     type: Schema.Types.ObjectId,
     ref: "Anggota",
   },

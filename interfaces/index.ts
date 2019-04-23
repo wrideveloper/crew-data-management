@@ -48,7 +48,7 @@ export interface IKegiatan extends Document {
 export interface INomorSurat extends Document {
   nomor: string,
   keperluan: string,
-  pemohon: string
+  anggota: string
 }
 
 export interface IAdmin extends Document {
