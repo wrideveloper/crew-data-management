@@ -45,6 +45,12 @@ export interface IKegiatan extends Document {
   tanggal: Date
 }
 
+export interface INomorSurat extends Document {
+  nomor: string,
+  keperluan: string,
+  pemohon: string
+}
+
 export interface IAdmin extends Document {
   username: string
   password: string

@@ -10,6 +10,7 @@ import { KategoriKegiatanRouter } from "./routers/KategoriKegiatanRouter"
 import { KegiatanRouter } from "./routers/KegiatanRouter"
 import { LoginRouter } from "./routers/LoginRouter"
 import { MiniclassRouter } from "./routers/MiniclassRouter"
+import { NomorSuratRouter } from "./routers/NomorSuratRouter"
 import { PresensiRouter } from "./routers/PresensiRouter"
 const app = express()
 
@@ -27,6 +28,7 @@ app.use("/miniclass", MiniclassRouter)
 app.use("/presensi", PresensiRouter)
 app.use("/kegiatan", KegiatanRouter)
 app.use("/kategoriKegiatan", KategoriKegiatanRouter)
+app.use("/nomorSurat", NomorSuratRouter)
 app.use("/admin", AdminRouter)
 
 app.listen(process.env.PORT || 3000, () => console.log("server started"))

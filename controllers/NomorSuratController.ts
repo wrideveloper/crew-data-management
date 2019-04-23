@@ -1,22 +1,22 @@
 import { Request, Response } from "express"
-import { Miniclass } from "../models/Miniclass"
+import { NomorSurat } from "../models/NomorSurat"
 
-export class MiniclassController {
+export class NomorSuratController {
   public async index(req: Request, res: Response) {
-    res.json(await Miniclass.find({}).populate("divisi"))
+    res.json(await NomorSurat.find({}).populate("anggota"))
   }
 
   public async show(req: Request, res: Response) {
-    res.json(await Miniclass.findById(req.params._id).populate("divisi"))
+    res.json(await NomorSurat.findById(req.params._id).populate("anggota"))
   }
 
   public async store(req: Request, res: Response) {
-    res.json(await Miniclass.create(req.body))
+    res.json(await NomorSurat.create(req.body))
   }
 
   public async update(req: Request, res: Response) {
     res.json(
-      await Miniclass.findOneAndUpdate(
+      await NomorSurat.findOneAndUpdate(
         { _id: req.params._id },
         { $set: req.body },
         { new: true },
@@ -25,6 +25,6 @@ export class MiniclassController {
   }
 
   public async destroy(req: Request, res: Response) {
-    res.json(await Miniclass.findOneAndDelete({ _id: req.params._id }))
+    res.json(await NomorSurat.findOneAndDelete({ _id: req.params._id }))
   }
 }

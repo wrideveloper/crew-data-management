@@ -7,8 +7,9 @@
       "options": "never"
     },
     "no-console": false,
-    "object-literal-sort-keys": {
-      "options": "match-declaration-order"
+    "object-literal-sort-keys": false,
+    "no-namespace": {
+      "severity": "off"
     }
   },
   "rulesDirectory": []
