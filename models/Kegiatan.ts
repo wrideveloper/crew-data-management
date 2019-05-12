@@ -15,10 +15,9 @@ const KegiatanSchema = new Schema({
   tanggal: {
     type: Date,
   },
+  album: {
+    type: String,
+  },
 })
 
-export const Kegiatan = model<IKegiatan>(
-  "Kegiatan",
-  KegiatanSchema,
-  "Kegiatan",
-)
+export const Kegiatan = model<IKegiatan>("Kegiatan", KegiatanSchema, "Kegiatan")

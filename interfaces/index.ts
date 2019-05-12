@@ -43,11 +43,12 @@ export interface IKegiatan extends Document {
   kategoriKegiatan: string
   laporan: string
   tanggal: Date
+  album: string
 }
 
 export interface INomorSurat extends Document {
-  nomor: string,
-  keperluan: string,
+  nomor: string
+  keperluan: string
   anggota: string
 }
 
