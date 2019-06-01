@@ -7,7 +7,11 @@ export class LoginController {
     const { username, password } = req.body
     const user = await Admin.findOne({ username, password })
     if (user) {
-      res.json({ success: true, token: jwt.sign({ user }, "randomStuff") })
+      res.json({
+        success: true,
+        token: jwt.sign({ user }, "randomStuff"),
+        user,
+      })
     } else {
       res.json({ success: false })
     }
