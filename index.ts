@@ -8,6 +8,7 @@ import { DivisiRouter } from "./routers/DivisiRouter"
 import { JabatanRouter } from "./routers/JabatanRouter"
 import { KategoriKegiatanRouter } from "./routers/KategoriKegiatanRouter"
 import { KegiatanRouter } from "./routers/KegiatanRouter"
+import { LevelRouter } from "./routers/LevelRouter"
 import { LoginRouter } from "./routers/LoginRouter"
 import { MiniclassRouter } from "./routers/MiniclassRouter"
 import { NomorSuratRouter } from "./routers/NomorSuratRouter"
@@ -30,5 +31,6 @@ app.use("/kegiatan", KegiatanRouter)
 app.use("/kategoriKegiatan", KategoriKegiatanRouter)
 app.use("/nomorSurat", NomorSuratRouter)
 app.use("/admin", AdminRouter)
+app.use("/level", LevelRouter)
 
 app.listen(process.env.PORT || 3000, () => console.log("server started"))

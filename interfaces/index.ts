@@ -56,3 +56,8 @@ export interface IAdmin extends Document {
   username: string
   password: string
 }
+
+export interface ILevel extends Document {
+  nama: string
+  akses: string[]
+}
