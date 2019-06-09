@@ -59,5 +59,5 @@ export interface IAdmin extends Document {
 
 export interface ILevel extends Document {
   nama: string
-  akses: string[]
+  hakAkses: string[]
 }

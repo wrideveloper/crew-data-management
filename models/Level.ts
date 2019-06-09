@@ -5,7 +5,7 @@ const LevelSchema = new Schema({
   nama: {
     type: String,
   },
-  akses: {
+  hakAkses: {
     type: [String],
   },
 })
