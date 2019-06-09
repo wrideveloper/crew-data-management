@@ -8,6 +8,10 @@ const AdminSchema = new Schema({
   password: {
     type: String,
   },
+  level: {
+    type: Schema.Types.ObjectId,
+    ref: "Level",
+  },
 })
 
 export const Admin = model<IAdmin>("Admin", AdminSchema, "Admin")

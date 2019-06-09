@@ -55,6 +55,7 @@ export interface INomorSurat extends Document {
 export interface IAdmin extends Document {
   username: string
   password: string
+  level: ILevel
 }
 
 export interface ILevel extends Document {

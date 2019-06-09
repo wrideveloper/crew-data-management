@@ -3,7 +3,9 @@ import { Admin } from "../models/Admin"
 
 export class AdminController {
   public index(req: Request, res: Response) {
-    Admin.find({}).then((data) => res.json(data))
+    Admin.find({})
+      .populate("level")
+      .then((data) => res.json(data))
   }
 
   public show(req: Request, res: Response) {
@@ -23,8 +25,6 @@ export class AdminController {
   }
 
   public destroy(req: Request, res: Response) {
-    Admin.findOneAndDelete({ _id: req.params._id }).then((data) =>
-      res.json(data),
-    )
+    Admin.findOneAndDelete({ _id: req.params._id }).then((data) => res.json(data))
   }
 }
