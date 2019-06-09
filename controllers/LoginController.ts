@@ -5,7 +5,7 @@ import { Admin } from "../models/Admin"
 export class LoginController {
   public async login(req: Request, res: Response) {
     const { username, password } = req.body
-    const user = await Admin.findOne({ username, password })
+    const user = await Admin.findOne({ username, password }).populate("level")
     if (user) {
       res.json({
         success: true,
