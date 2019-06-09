@@ -1,4 +1,5 @@
 import { Request, Response } from "express"
+import { Anggota } from "../models/Anggota"
 import { Miniclass } from "../models/Miniclass"
 
 export class MiniclassController {
@@ -8,6 +9,10 @@ export class MiniclassController {
 
   public async show(req: Request, res: Response) {
     res.json(await Miniclass.findById(req.params._id).populate("divisi"))
+  }
+
+  public async showAnggota(req: Request, res: Response) {
+    res.json(await Anggota.find({ miniclass: req.params._id }))
   }
 
   public async store(req: Request, res: Response) {

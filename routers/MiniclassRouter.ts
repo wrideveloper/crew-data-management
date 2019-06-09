@@ -6,6 +6,7 @@ const controller = new MiniclassController()
 
 router.get("/", controller.index)
 router.get("/:_id", controller.show)
+router.get("/:_id/anggota", controller.showAnggota)
 router.post("/", controller.store)
 router.put("/:_id", controller.update)
 router.delete("/:_id", controller.destroy)
