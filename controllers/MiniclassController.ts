@@ -12,7 +12,12 @@ export class MiniclassController {
   }
 
   public async showAnggota(req: Request, res: Response) {
-    res.json(await Anggota.find({ miniclass: req.params._id }))
+    res.json(
+      await Anggota.find({
+        miniclass: req.params._id,
+        angkatan: req.params.angkatan,
+      }),
+    )
   }
 
   public async store(req: Request, res: Response) {
